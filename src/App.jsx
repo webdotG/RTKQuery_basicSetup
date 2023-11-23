@@ -1,19 +1,23 @@
-import { useAddPostMutation, useGetPostsQuery } from './STORE/postsApi'
+import { useAddPostMutation, useDeletePostMutation, useGetPostsQuery } from './STORE/postsApi'
 import style from './App.module.scss'
 import { useState } from 'react'
 
 function App() {
   const [newPost, setNewPost] = useState('')
   const { data, isLoading } = useGetPostsQuery()
-  const [addPost, {isError}] = useAddPostMutation()
+  const [addPost] = useAddPostMutation()
+  const [deletePost] = useDeletePostMutation()
 
   const handleAddPost = async () => {
-    if(newPost) {
-      await addPost({name: newPost}).unwrap()
+    if (newPost) {
+      await addPost({ name: newPost }).unwrap()
       setNewPost('')
       console.log("post adding", newPost)
     }
-  } 
+  }
+  const handleDeletePost = async (id) => {
+    await deletePost(id).unwrap()
+  }
 
   if (isLoading) return <h2 className={style.isLoading}>Загружаю ...</h2>
 
@@ -37,6 +41,9 @@ function App() {
               <h4 className={style.post_id}>post id : {post.id}</h4>
               <h6 className={style.post_title}>{post.title}</h6>
               <p className={style.post_text}>{post.body}</p>
+              <button className={style.post_delete}
+                onClick={() => handleDeletePost(post.id)}
+              >Delete</button>
             </li>
           ))
         }
