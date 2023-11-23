@@ -11,42 +11,58 @@
 @media (min-width:320px) {
 
   .app_wrapper {
-    width: 300px;
-    padding-left: 10px;
-    padding-right: 10px;
+    width: 320px;
     padding-top: 25px;
     margin: 0 auto;
-    border: 2px solid black;
-    border-radius: 10px;
   }
 
   .isLoading {
     width: 320px;
     padding-top: 25px;
     padding-bottom: 5px;
+    margin: 0 auto;
     font-size: 22px;
     border-bottom: 2px solid black;
   }
 
   .main_title {
+    width: 125px;
+    margin:  0 auto;
+    display: block;
     font-weight: 400;
-    padding-bottom: 25px;
-  }
-
-  .posts_item {
     padding-bottom: 15px;
     margin-bottom: 15px;
     border-bottom: 2px solid black;
+
   }
 
-  .posts_title {
+  .post_item {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+
+  .post_id{
+    width: 100px;
+    margin-right:  auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: block;
+    font-weight: 300;
+   
+  }
+
+  .post_title {
     font-size: 18px;
     padding-bottom: 10px;
     text-decoration: underline;
     font-weight: 300;
   }
 
-  .posts_text {
+  .post_text {
     font-size: 16px;
     font-weight: 300;
   }

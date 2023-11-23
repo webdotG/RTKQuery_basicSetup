@@ -13,9 +13,10 @@ function App() {
       <ul className={style.posts_list} >
         {
           data.map( post => (
-            <li key={post.id} className={style.posts_item}>
-                <h6 className={style.posts_title}>{post.title}</h6>
-                <p className={style.posts_text}>{post.body}</p>
+            <li key={post.id} className={style.post_item}>
+                <h4 className={style.post_id}>post id : {post.id}</h4>
+                <h6 className={style.post_title}>{post.title}</h6>
+                <p className={style.post_text}>{post.body}</p>
             </li>
           ))
         }
